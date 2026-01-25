@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Особистий кабінет | CLEANPRO</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="cabinet.css">
+</head>
+<body class="cabinet-body">
+
+<div class="dashboard-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <h2>CLEAN<span>PRO</span></h2>
+
+        <nav>
+            <a href="dashboard.html" class="active">🏠 Кабінет</a>
+            <a href="orders.html">🧾 Мої прибирання</a>
+            <a href="referrals.html">🤝 Реферали</a>
+            <a href="../index.html">🌍 На сайт</a>
+            <a href="#" onclick="logout()">🚪 Вийти</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="dashboard-main">
+
+        <h1>Вітаємо 👋</h1>
+        <p class="subtitle">Це ваш особистий кабінет CLEANPRO</p>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Прибирань замовлено</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>0 грн</h3>
+                <p>Витрачено</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>0</h3>
+                <p>Рефералів</p>
+            </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="info-box">
+            <h2>Що ви можете тут робити?</h2>
+            <ul>
+                <li>✔️ Переглядати історію прибирань</li>
+                <li>✔️ Бачити витрачені суми</li>
+                <li>✔️ Запрошувати друзів і отримувати знижки</li>
+                <li>✔️ Замовляти прибирання в 1 клік</li>
+            </ul>
+        </div>
+
+        <button class="btn big">Замовити нове прибирання</button>
+
+    </main>
+
+</div>
+
+<script src="cabinet.js"></script>
+<script>
+    // перевірка авторизації
+    checkAuth();
+</script>
+</body>
+</html>

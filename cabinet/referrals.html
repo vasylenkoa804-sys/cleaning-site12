@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реферальна програма | CLEANPRO</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="cabinet.css">
+</head>
+<body class="cabinet-body">
+
+<div class="dashboard-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <h2>CLEAN<span>PRO</span></h2>
+
+        <nav>
+            <a href="dashboard.html">🏠 Кабінет</a>
+            <a href="orders.html">🧾 Мої прибирання</a>
+            <a href="referrals.html" class="active">🤝 Реферали</a>
+            <a href="../index.html">🌍 На сайт</a>
+            <a href="#" onclick="logout()">🚪 Вийти</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="dashboard-main">
+
+        <h1>Реферальна програма</h1>
+        <p class="subtitle">Запроси друга — отримай <strong>30% знижки</strong></p>
+
+        <!-- REF LINK -->
+        <div class="info-box">
+            <h2>Ваше реферальне посилання</h2>
+
+            <div class="ref-link">
+                <input type="text" id="refLink" readonly>
+                <button class="btn" onclick="copyRef()">Скопіювати</button>
+            </div>
+
+            <p class="small">
+                Поділись цим посиланням з друзями.  
+                Коли друг замовить прибирання — ти отримаєш знижку.
+            </p>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="refCount">0</h3>
+                <p>Запрошених</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>30%</h3>
+                <p>Знижка</p>
+            </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="info-box">
+            <h2>Як це працює?</h2>
+            <ul>
+                <li>1️⃣ Надсилаєш посилання другу</li>
+                <li>2️⃣ Друг замовляє прибирання</li>
+                <li>3️⃣ Ти отримуєш 30% знижки</li>
+            </ul>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="cabinet.js"></script>
+<script>
+    checkAuth();
+
+    // ===== REFERRAL LOGIC =====
+    const user = JSON.parse(localStorage.getItem("cleanpro_user"));
+
+    const refLinkInput = document.getElementById("refLink");
+    const refCount = document.getElementById("refCount");
+
+    // генеруємо реф-код
+    if (!user.refCode) {
+        user.refCode = "CP-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+        user.referrals = 0;
+        localStorage.setItem("cleanpro_user", JSON.stringify(user));
+    }
+
+    refLinkInput.value = window.location.origin + "/?ref=" + user.refCode;
+    refCount.textContent = user.referrals || 0;
+
+    function copyRef() {
+        refLinkInput.select();
+        document.execCommand("copy");
+        alert("Реферальне посилання скопійовано");
+    }
+</script>
+</body>
+</html>

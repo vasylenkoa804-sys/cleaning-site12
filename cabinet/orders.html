@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Мої прибирання | CLEANPRO</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="cabinet.css">
+</head>
+<body class="cabinet-body">
+
+<div class="dashboard-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <h2>CLEAN<span>PRO</span></h2>
+
+        <nav>
+            <a href="dashboard.html">🏠 Кабінет</a>
+            <a href="orders.html" class="active">🧾 Мої прибирання</a>
+            <a href="referrals.html">🤝 Реферали</a>
+            <a href="../index.html">🌍 На сайт</a>
+            <a href="#" onclick="logout()">🚪 Вийти</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="dashboard-main">
+
+        <h1>Мої прибирання</h1>
+        <p class="subtitle">Історія ваших замовлень</p>
+
+        <!-- TABLE -->
+        <div class="orders-table">
+            <div class="table-head">
+                <span>Дата</span>
+                <span>Тип</span>
+                <span>Обʼєкт</span>
+                <span>Сума</span>
+                <span>Статус</span>
+            </div>
+
+            <!-- ORDER -->
+            <div class="table-row">
+                <span>—</span>
+                <span>—</span>
+                <span>—</span>
+                <span>—</span>
+                <span class="status empty">Поки немає</span>
+            </div>
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div class="info-box">
+            <h2>Поки що замовлень немає</h2>
+            <p>
+                Після першого прибирання тут зʼявиться
+                повна історія з датами та сумами.
+            </p>
+        </div>
+
+        <button class="btn big">Замовити прибирання</button>
+
+    </main>
+
+</div>
+
+<script src="cabinet.js"></script>
+<script>
+    checkAuth();
+</script>
+</body>
+</html>
