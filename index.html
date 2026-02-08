@@ -56,7 +56,6 @@
         <h2>Наші основні послуги</h2>
 
         <div class="services-grid">
-
             <a href="apartments.html" class="service-card">
                 <h3>Прибирання квартир</h3>
                 <p>Регулярне, генеральне, після оренди</p>
@@ -71,7 +70,6 @@
                 <h3>Прибирання будинків</h3>
                 <p>Котеджі, приватні будинки</p>
             </a>
-
         </div>
     </div>
 </section>
@@ -117,16 +115,29 @@
 
         <h2>Залишити заявку</h2>
 
-        <!-- Форма з Formspree -->
+        <!-- Форма для Formspree -->
         <form id="orderForm" action="https://formspree.io/f/xjgekvlq" method="POST">
-            <input type="text" name="name" placeholder="Імʼя" required>
-            <input type="tel" name="phone" placeholder="Телефон" required>
-            <select name="apartmentType" required>
-                <option value="">Тип квартири</option>
-                <option value="studio">Студія</option>
-                <option value="1-room">1-кімнатна</option>
-                <option value="2-room">2-кімнатна</option>
-            </select>
+            <label>
+                Ваш Email:
+                <input type="email" name="email" placeholder="example@mail.com" required>
+            </label>
+            <label>
+                Імʼя:
+                <input type="text" name="name" placeholder="Імʼя" required>
+            </label>
+            <label>
+                Телефон:
+                <input type="tel" name="phone" placeholder="Телефон" required>
+            </label>
+            <label>
+                Тип квартири:
+                <select name="apartmentType" required>
+                    <option value="">Виберіть тип квартири</option>
+                    <option value="studio">Студія</option>
+                    <option value="1-room">1-кімнатна</option>
+                    <option value="2-room">2-кімнатна</option>
+                </select>
+            </label>
             <button type="submit" class="btn big">Відправити</button>
         </form>
 
@@ -143,7 +154,7 @@
     // Відправка форми без перезавантаження сторінки
     const form = document.getElementById('orderForm');
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // не перезавантажуємо сторінку
+        e.preventDefault();
         const data = new FormData(form);
         const response = await fetch(form.action, {
             method: 'POST',
@@ -153,12 +164,16 @@
         if (response.ok) {
             document.getElementById('successMessage').style.display = 'block';
             form.reset();
+            // Можна додати автозакриття модалки через 2 секунди
+            setTimeout(() => {
+                document.getElementById('modal').style.display = 'none';
+            }, 2000);
         } else {
             alert('Помилка при відправці, спробуйте ще раз.');
         }
     });
 
-    // Відкриття/закриття модального вікна
+    // Модалка: відкриття/закриття
     const modal = document.getElementById('modal');
     const openButtons = document.querySelectorAll('.openModal');
     const closeBtn = modal.querySelector('.close');
