@@ -1,0 +1,51 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Львів" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[23.95,49.75],[24.15,49.75],[24.15,49.9],[23.95,49.9],[23.95,49.75]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Пустомити" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[23.8,49.65],[24.05,49.65],[24.05,49.8],[23.8,49.8],[23.8,49.65]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Городок" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[23.6,49.6],[23.85,49.6],[23.85,49.75],[23.6,49.75],[23.6,49.6]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Самбір" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[23.1,49.3],[23.45,49.3],[23.45,49.55],[23.1,49.55],[23.1,49.3]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Дрогобич" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[23.3,49.25],[23.6,49.25],[23.6,49.45],[23.3,49.45],[23.3,49.25]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Стрий" },
+      "geometry": {
+      }
+    }
+  ]
+}

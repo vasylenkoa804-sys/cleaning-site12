@@ -89,4 +89,45 @@ const header = document.querySelector('.header');
 header.addEventListener('click', () => {
     document.querySelector('.nav').classList.toggle('active');
 });
-і
+
+// ===== MAP INIT =====
+const map = L.map('map').setView([49.8397, 24.0297], 8);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// ===== REGIONS HIGHLIGHT =====
+fetch("lviv-regions.geojson")
+    .then(res => res.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: {
+                fillColor: "#22c55e",
+                fillOpacity: 0.35,
+                color: "#16a34a",
+                weight: 2
+            }
+        }).addTo(map);
+    });
+// ===== CITY LABELS =====
+const cities = [
+    { name: "Львів", lat: 49.8397, lng: 24.0297 },
+    { name: "Городок", lat: 49.784, lng: 23.648 },
+    { name: "Пустомити", lat: 49.715, lng: 23.912 },
+    { name: "Самбір", lat: 49.52, lng: 23.2 },
+    { name: "Дрогобич", lat: 49.35, lng: 23.51 },
+    { name: "Стрий", lat: 49.26, lng: 23.85 },
+    { name: "Трускавець", lat: 49.278, lng: 23.505 },
+    { name: "Борислав", lat: 49.286, lng: 23.418 },
+    { name: "Моршин", lat: 49.156, lng: 23.873 }
+];
+
+cities.forEach(city => {
+    L.marker([city.lat, city.lng], {
+        icon: L.divIcon({
+            className: "city-label",
+            html: `<span>${city.name}</span>`
+        })
+    }).addTo(map);
+});
