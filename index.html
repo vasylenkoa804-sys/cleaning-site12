@@ -2,98 +2,128 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Професійний клінінг у вашому місті | Прибирання квартир та офісів</title>
-
-    <meta name="description" content="Професійне прибирання квартир, будинків та офісів. Швидко, якісно, з гарантією. Замовляйте клінінг вже сьогодні.">
+    <title>Клінінгова компанія | Прибирання квартир, офісів, будинків</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Професійне прибирання квартир, офісів та будинків. Гарантія якості. Швидкий виїзд. Реферальна програма.">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Leaflet CSS -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#22c55e">
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header class="header">
-    <div class="container">
-        <div class="logo">CLEO<span>NIQ</span></div>
-        <nav>
+    <div class="container header-inner">
+
+        <div class="logo">
+            CLEAN<span>PRO</span>
+        </div>
+
+        <nav class="nav">
             <a href="index.html">Головна</a>
-            <a href="services.html">Послуги</a>
-            <a href="prices.html">Ціни</a>
-            <a href="about.html">Про нас</a>
-            <a href="contacts.html">Контакти</a>
+            <a href="apartments.html">Квартири</a>
+            <a href="offices.html">Офіси</a>
+            <a href="houses.html">Будинки</a>
         </nav>
+
+        <a href="cabinet/login.html" class="btn" id="cabinetBtn">Вхід</a>
     </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
+    <div class="hero-content container">
+        <h1>
+            Професійне прибирання<br>
+            квартир, офісів та будинків
+        </h1>
+
+        <p>
+            Працюємо швидко · Якісно · З гарантією результату
+        </p>
+
+        <div class="hero-buttons">
+            <button class="btn big openModal">Замовити прибирання</button>
+            <a href="#services" class="btn outline">Наші послуги</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
     <div class="container">
-        <h1>Професійний клінінг квартир та офісів</h1>
-        <p>Чистота з гарантією якості. Працюємо швидко та акуратно.</p>
-        <a href="contacts.html" class="btn">Розрахувати вартість</a>
+        <h2>Наші основні послуги</h2>
+
+        <div class="services-grid">
+
+            <a href="apartments.html" class="service-card">
+                <h3>Прибирання квартир</h3>
+                <p>Регулярне, генеральне, після оренди</p>
+            </a>
+
+            <a href="offices.html" class="service-card">
+                <h3>Прибирання офісів</h3>
+                <p>Для бізнесу та компаній</p>
+            </a>
+
+            <a href="houses.html" class="service-card">
+                <h3>Прибирання будинків</h3>
+                <p>Котеджі, приватні будинки</p>
+            </a>
+
+        </div>
     </div>
 </section>
 
-<section class="benefits container">
-    <div class="benefit">
-        <h3>✔ Досвідчені працівники</h3>
-        <p>Навчені спеціалісти з професійним обладнанням</p>
-    </div>
-    <div class="benefit">
-        <h3>✔ Гарантія якості</h3>
-        <p>Платите тільки за результат</p>
-    </div>
-    <div class="benefit">
-        <h3>✔ Швидкий виїзд</h3>
-        <p>Приїжджаємо в день замовлення</p>
+<!-- ===== WHY US ===== -->
+<section class="why">
+    <div class="container">
+        <h2>Чому обирають нас</h2>
+
+        <div class="why-grid">
+            <div class="why-card">✔️ Досвідчені працівники</div>
+            <div class="why-card">✔️ Професійна хімія</div>
+            <div class="why-card">✔️ Фіксовані ціни</div>
+            <div class="why-card">✔️ Гарантія якості</div>
+        </div>
     </div>
 </section>
 
+<!-- ===== CTA ===== -->
 <section class="cta">
-    <h2>
-        Замовте прибирання вже сьогодні<br>
-        Працюємо у вашому місті з гарантією якості
-    </h2>
-    <a href="contacts.html" class="btn btn-dark">Залишити заявку</a>
-</section>і
-
-<section class="contact-form container">
-    <h2>Залишити заявку</h2>
-
-    <form action="https://formsubmit.co/your@email.com" method="POST">
-        <input type="text" name="name" placeholder="Ваше імʼя" required>
-        <input type="tel" name="phone" placeholder="Телефон" required>
-        <textarea name="message" placeholder="Що потрібно прибрати?"></textarea>
-
-        <button type="submit" class="btn">Надіслати</button>
-    </form>
+    <div class="container">
+        <h2>Готові замовити прибирання?</h2>
+        <button class="btn big openModal">Залишити заявку</button>
+    </div>
 </section>
 
-<section class="map-section container">
-    <h2>Зона обслуговування</h2>
-    <div id="map"></div>
-</section>
-
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
-    <p>© 2026 CLEANPRO. Всі права захищені</p>
+    <p>© 2026 CLEANPRO. Всі права захищені.</p>
 </footer>
 
-<script src="js/main.js"></script>
+<!-- ===== MODAL ===== -->
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <span class="close">&times;</span>
 
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <h2>Залишити заявку</h2>
 
-<!-- Main JS -->
-<script src="js/main.js"></script>
+        <form>
+            <input type="text" placeholder="Імʼя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <button class="btn big">Відправити</button>
+        </form>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
 </body>
 </html>
-

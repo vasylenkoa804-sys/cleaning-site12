@@ -250,3 +250,35 @@ h1, h2, h3 {
         font-size: 36px;
     }
 }
+
+/* ===== MOBILE FIX FOR HEADER ===== */
+@media (max-width: 768px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+        background: #fff;
+        border-top: 1px solid #eee;
+    }
+
+    .nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    #cabinetBtn {
+        display: none;
+    }
+}

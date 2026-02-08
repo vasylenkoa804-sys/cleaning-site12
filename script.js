@@ -83,3 +83,10 @@ forms.forEach(form => {
         form.reset();
     });
 });
+
+const header = document.querySelector('.header');
+
+header.addEventListener('click', () => {
+    document.querySelector('.nav').classList.toggle('active');
+});
+і
