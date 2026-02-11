@@ -2,13 +2,9 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Прибирання будинків та котеджів | CLEANPRO</title>
-
-    <!-- SEO -->
-    <meta name="description" content="Професійне прибирання будинків та котеджів. Генеральне та регулярне прибирання. Преміальний сервіс з гарантією.">
-
+    <title>Прибирання будинків | CLEANPRO</title>
+    <meta name="description" content="Професійне прибирання будинків та приватних приміщень. Регулярне обслуговування, договори, гарантія якості.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +12,6 @@
 <!-- ===== HEADER ===== -->
 <header class="header">
     <div class="container header-inner">
-
         <div class="logo">
             CLEAN<span>PRO</span>
         </div>
@@ -25,7 +20,7 @@
             <a href="index.html">Головна</a>
             <a href="apartments.html">Квартири</a>
             <a href="offices.html">Офіси</a>
-            <a href="houses.html">Будинки</a>
+            <a href="houses.html" class="active">Будинки</a>
         </nav>
 
         <button class="btn openModal">Замовити</button>
@@ -35,34 +30,12 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
     <div class="hero-content container">
-        <h1>
-            Прибирання будинків<br>
-            та котеджів
-        </h1>
-
-        <p>
-            Великі площі · Складні поверхні · Преміум підхід<br>
-            Довіряйте професіоналам
-        </p>
-
+        <h1>Професійне прибирання<br>будинків та приватних приміщень</h1>
+        <p>Регулярне обслуговування · Договори · Фіксовані ціни<br>Працюємо до або після робочого дня</p>
         <div class="hero-buttons">
             <button class="btn big openModal">Замовити прибирання</button>
-            <a href="#prices" class="btn outline">Розрахувати ціну</a>
+            <a href="#prices" class="btn outline">Дивитись ціни</a>
         </div>
-    </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section>
-    <div class="container">
-        <h2>Професійне прибирання приватних будинків</h2>
-
-        <p>
-            Прибирання будинку — це складний процес, який потребує
-            досвіду, правильної хімії та техніки. Ми працюємо з
-            великими площами, дорогими матеріалами та індивідуальними
-            вимогами клієнтів.
-        </p>
     </div>
 </section>
 
@@ -70,14 +43,13 @@
 <section class="why">
     <div class="container">
         <h2>Що входить у прибирання будинку</h2>
-
         <div class="why-grid">
-            <div class="why-card">✔️ Всі житлові кімнати</div>
-            <div class="why-card">✔️ Кухня та санвузли</div>
-            <div class="why-card">✔️ Сходи та коридори</div>
-            <div class="why-card">✔️ Панорамні вікна</div>
-            <div class="why-card">✔️ Тераси та балкони</div>
-            <div class="why-card">✔️ Професійна хімія</div>
+            <div class="why-card">✔️ Миття підлоги та плінтусів</div>
+            <div class="why-card">✔️ Очищення кухні</div>
+            <div class="why-card">✔️ Санвузли та ванна</div>
+            <div class="why-card">✔️ Дзеркала та поверхні</div>
+            <div class="why-card">✔️ Винесення сміття</div>
+            <div class="why-card">✔️ Пилосос та меблі</div>
         </div>
     </div>
 </section>
@@ -85,17 +57,19 @@
 <!-- ===== PRICES ===== -->
 <section id="prices">
     <div class="container">
-        <h2>Ціни на прибирання будинків</h2>
-
+        <h2>Тарифи на прибирання будинків</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Генеральне прибирання</h3>
-                <p>від 100грн м²</p>
+                <h3>Регулярне прибирання</h3>
+                <p>від 50 грн м²</p>
             </div>
-
             <div class="service-card">
-                <h3>прибирання після ремонту</h3>
-                <p>від 130грн м²</p>
+                <h3>Генеральне прибирання</h3>
+                <p>від 70 грн м²</p>
+            </div>
+            <div class="service-card">
+                <h3>Прибирання після ремонту</h3>
+                <p>від 90 грн м²</p>
             </div>
         </div>
     </div>
@@ -104,7 +78,7 @@
 <!-- ===== CTA ===== -->
 <section class="cta">
     <div class="container">
-        <h2>Отримайте індивідуальний розрахунок вартості</h2>
+        <h2>Отримайте персональну пропозицію для вашого будинку</h2>
         <button class="btn big openModal">Залишити заявку</button>
     </div>
 </section>
@@ -114,22 +88,16 @@
     <p>© 2026 CLEANPRO. Всі права захищені.</p>
 </footer>
 
-<!-- ===== MODAL ===== -->
+<!-- ===== UNIVERSAL MODAL ===== -->
 <div class="modal" id="modal">
     <div class="modal-box">
         <span class="close">&times;</span>
-
-        <h2>Заявка на прибирання будинку</h2>
-
-        <form>
-            <input type="text" placeholder="Імʼя" required>
-            <input type="tel" placeholder="Телефон" required>
-            <input type="text" placeholder="Площа будинку (м²)">
-            <button class="btn big">Відправити</button>
-        </form>
+        <h2>Заявка для будинку</h2>
     </div>
 </div>
 
+<!-- ===== SCRIPTS ===== -->
 <script src="script.js"></script>
+
 </body>
 </html>
