@@ -47,7 +47,9 @@ if (refCode) localStorage.setItem("cleanpro_ref", refCode);
 
 // ================= FORM SUBMIT (TELEGRAM) =================
 const BOT_TOKEN = "8579321384:AAGW2SRdm9YeP6Elq_UWhaYk56X0TBBA9Dc";
-const CHAT_ID = "8173442141";
+
+// Замінено на твою групу
+const CHAT_ID = "-3762526832";
 
 // додаємо універсальну форму у модалку (тільки один раз)
 if (modal) {
